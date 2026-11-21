@@ -7,9 +7,20 @@
 ## Core Principles & Architecture
 
 * **Bloat-Free & Vanilla First:** Closed-source Google services (GApps) and proprietary vendor bloatware are excluded by default, delivering a clean and responsive base system.
-* **Custom Feature Set:** Tailored UI tweaks, system-level optimizations, and custom behavioral enhancements integrated directly into the platform without sacrificing performance.
+* **Opinionated Personal Changes:** Built around custom system tweaks, personal UI preferences, and workflow-oriented adjustments tailored for daily use.
 * **Monorepo Organization:** Device trees, common vendor configurations, local manifests, and build automation scripts are versioned together under a single centralized repository.
 * **Hardware Compatibility & Stability:** Stock Hardware Abstraction Layer (HAL) components, SELinux policies, and kernel configurations are kept clean, auditable, and maintainable.
+
+---
+
+## Personal Changes & Customizations
+
+Project Neutron includes opinionated modifications and personal tweaks layered on top of the base AOSP/LineageOS tree:
+
+* **System & UI Overrides (`overlay-neutron/`):** Custom status bar padding, QS tile layout tweaks, default accent/theme adjustments, and cleaner system defaults.
+* **Debloated Product Configuration:** Stripped-down `PRODUCT_PACKAGES` list removing unused legacy AOSP apps and background services to maximize free RAM.
+* **Custom Default Properties (`vendor.prop` / `system.prop`):** Tuned animation scales, memory management flags (LMKD), and audio/network defaults suited for personal daily driving.
+* **Patchset & Feature Additions:** Custom framework/SystemUI patches and personal quality-of-life additions maintained directly inside the monorepo.
 
 ---
 
@@ -33,7 +44,7 @@ projectneutron/
 │           ├── neutron_chiron.mk # Product definition (PRODUCT_NAME, brand, model)
 │           └── proprietary-files.txt # Vendor binary blob list
 ├── vendor/
-│   └── neutron/                  # Common build rules, overlays & custom features
+│   └── neutron/                  # Common build rules, overlays & personal customizations
 │       └── config/
 │           └── common_full_phone.mk
 ├── manifests/
