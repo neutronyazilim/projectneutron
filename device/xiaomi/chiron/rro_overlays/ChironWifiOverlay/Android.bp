@@ -1,0 +1,5 @@
+runtime_resource_overlay {
+    name: "ChironWifiOverlay",
+    theme: "ChironWifiOverlay",
+    product_specific: true
+}
